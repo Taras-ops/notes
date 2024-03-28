@@ -21,9 +21,9 @@ function UserNav({
   email,
   picture,
 }: {
-  name: String;
-  email: String;
-  picture: String;
+  name: string;
+  email: string;
+  picture: string;
 }) {
   return (
     <DropdownMenu>
