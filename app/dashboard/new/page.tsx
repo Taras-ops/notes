@@ -72,11 +72,11 @@ async function NewNotePage() {
           </div>
           <div className='gap-y-2 flex flex-col'>
             <Label>Description</Label>
-            {/* <Textarea
+            <Textarea
               name='description'
               placeholder='Describe note as you want'
-            /> */}
-            <Tiptap description={description} onChange={''} />
+            />
+            {/* <Tiptap description={description} onChange={''} /> */}
           </div>
         </CardContent>
 
