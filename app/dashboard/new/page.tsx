@@ -15,6 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { SubmitButton } from '@/components/Submitbuttons';
+import Tiptap from '@/components/tiptap/Tiptap';
 import prisma from '@/lib/db';
 
 async function NewNotePage() {
@@ -22,6 +23,7 @@ async function NewNotePage() {
 
   const { getUser } = getKindeServerSession();
   const user = await getUser();
+  let description = '';
 
   if (!user) {
     throw new Error('Not authorized');
@@ -43,6 +45,10 @@ async function NewNotePage() {
 
     return redirect('/dashboard');
   }
+
+  const onChangeDescription = () => {
+    'use client';
+  };
 
   return (
     <Card>
@@ -66,10 +72,11 @@ async function NewNotePage() {
           </div>
           <div className='gap-y-2 flex flex-col'>
             <Label>Description</Label>
-            <Textarea
+            {/* <Textarea
               name='description'
               placeholder='Describe note as you want'
-            />
+            /> */}
+            <Tiptap description={description} onChange={''} />
           </div>
         </CardContent>
 
